@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public class LoanRequest {
 
-     @NotNull(message = "The return date is requaried")
+     
     private LocalDate returnDate;
 
     // @NotNull(message = "The status is requaried")

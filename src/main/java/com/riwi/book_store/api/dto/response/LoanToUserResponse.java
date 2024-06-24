@@ -11,7 +11,6 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 @Data
-public class LoanResponse extends LoanBasicResponse {
-    private UserBasicResponse user;
+public class LoanToUserResponse extends LoanBasicResponse {
     private BookBasicResponse book;
 }

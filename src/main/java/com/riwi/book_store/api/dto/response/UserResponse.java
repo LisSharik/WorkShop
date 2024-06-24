@@ -14,6 +14,6 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Data
 public class UserResponse extends UserBasicResponse {
-    private List<LoanBasicResponse> loans;
-    private List<ReservationBasicResponse> reservations;
+    private List<LoanToUserResponse> loans;
+    private List<ReservationToUserResponse> reservations;
 }
