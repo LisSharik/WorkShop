@@ -30,25 +30,28 @@ public class UserService implements IUserService{
     public UserBasicResponse create(UserRequest request) {
         UserEntity userEntity = this.userMapper.toUserEntity(request);
 
-        return this.userMapper.toUserResponse(this.userRepository.save(userEntity));
+        return this.userMapper.toUserBasicResponse(this.userRepository.save(userEntity));
     }
 
     @Override
     public UserResponse get(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+        UserEntity userEntity = this.userRepository.findById(id).orElseThrow();
+        return this.userMapper.toUserResponse(userEntity);
     }
 
     @Override
     public UserBasicResponse update(UserRequest request, Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        UserEntity userEntity = this.userRepository.findById(id).orElseThrow();
+        userEntity = this.userMapper.toUserEntity(request);
+        userEntity.setId(id);
+        return this.userMapper.toUserBasicResponse(this.userRepository.save(userEntity));
     }
 
     @Override
     public void delete(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        UserEntity userEntity = this.userRepository.findById(id).orElseThrow();
+        userRepository.delete(userEntity);
+
     }
 
     @Override
