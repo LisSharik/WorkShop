@@ -1,9 +1,13 @@
 package com.riwi.book_store.infraestructure.abstract_services;
 
 
-import com.riwi.book_store.api.dto.request.UserRequest;
-import com.riwi.book_store.api.dto.response.UserBasicResponse;
+import org.springframework.data.domain.Page;
 
-public interface IUserService extends CrudService<UserRequest, UserBasicResponse, Long> {
-    
+import com.riwi.book_store.api.dto.request.UserRequest;
+import com.riwi.book_store.api.dto.response.BookBasicResponse;
+import com.riwi.book_store.api.dto.response.UserBasicResponse;
+import com.riwi.book_store.api.dto.response.UserResponse;
+
+public interface IUserService extends CrudService<UserRequest, UserResponse, UserBasicResponse, Long> {
+    public Page<BookBasicResponse> getAll(int page, int size);
 }
