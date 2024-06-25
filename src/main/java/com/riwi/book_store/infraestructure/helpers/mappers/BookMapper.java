@@ -7,6 +7,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
 
+import com.riwi.book_store.api.dto.request.BookRequest;
 import com.riwi.book_store.api.dto.response.BookBasicResponse;
 import com.riwi.book_store.api.dto.response.BookResponse;
 import com.riwi.book_store.domain.entities.Book;
@@ -17,7 +18,7 @@ public interface BookMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "loans", ignore =  true)
     @Mapping(target = "reservations", ignore =  true)
-    Book toBookEntity(Book bookEntity);
+    Book toBookEntity(BookRequest request);
 
 
     @InheritConfiguration

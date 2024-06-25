@@ -21,6 +21,10 @@ public interface UserMapper {
     @Mapping(target = "reservations", ignore = true)
     UserEntity toUserEntity(UserRequest userRequest);
 
+    
+
+
+
     @InheritInverseConfiguration
     UserResponse toUserResponse(UserEntity userEntity);
 

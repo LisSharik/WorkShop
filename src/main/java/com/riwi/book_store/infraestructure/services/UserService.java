@@ -20,10 +20,10 @@ import lombok.AllArgsConstructor;
 public class UserService implements IUserService{
 
     @Autowired
-    UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Autowired
-    UserMapper userMapper;
+    private final UserMapper userMapper;
 
 
     @Override
@@ -50,7 +50,7 @@ public class UserService implements IUserService{
     @Override
     public void delete(Long id) {
         UserEntity userEntity = this.userRepository.findById(id).orElseThrow();
-        userRepository.delete(userEntity);
+        this.userRepository.delete(userEntity);
 
     }
 
