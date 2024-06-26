@@ -30,11 +30,10 @@ public class Loan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @CreationTimestamp
     @Column(nullable = false)
     private LocalDate loanDate;
 
-    @Column(length = 100)
+    @Column(nullable = false)
     private LocalDate returnDate;
 
     @Column(nullable = false)

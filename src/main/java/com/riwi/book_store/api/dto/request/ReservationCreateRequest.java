@@ -2,7 +2,7 @@ package com.riwi.book_store.api.dto.request;
 
 import java.time.LocalDate;
 
-
+import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,19 +13,15 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class LoanRequest {
+public class ReservationCreateRequest {
 
-     
-    private LocalDate returnDate;
-
-    // @NotNull(message = "The status is requaried")
-    // private boolean status;
+  
+    @FutureOrPresent(message = "The date must be current day or a later day")
+    private LocalDate reservationDate;
 
     @NotNull(message = "The user id is requaried")
     private Long userId; 
 
     @NotNull(message = "The book id is requaried")
     private Long bookId;
-
-
 }

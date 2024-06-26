@@ -16,6 +16,6 @@ public class UserBasicResponse {
     private String username;
     // private String password;
     private String email;
-    private Role rol;
+    private Role role;
     
 }

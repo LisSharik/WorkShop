@@ -29,7 +29,7 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @CreationTimestamp
+    @Column(nullable = false)
     private LocalDate reservationDate;
 
     @Column(nullable = false)

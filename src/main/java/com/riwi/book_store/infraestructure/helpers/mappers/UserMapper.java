@@ -6,8 +6,10 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
+import org.mapstruct.MappingTarget;
 
-import com.riwi.book_store.api.dto.request.UserRequest;
+import com.riwi.book_store.api.dto.request.UserCreateRequest;
+import com.riwi.book_store.api.dto.request.UserUpdateRequest;
 import com.riwi.book_store.api.dto.response.UserBasicResponse;
 import com.riwi.book_store.api.dto.response.UserResponse;
 import com.riwi.book_store.domain.entities.UserEntity;
@@ -19,10 +21,13 @@ public interface UserMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "loans", ignore = true)
     @Mapping(target = "reservations", ignore = true)
-    UserEntity toUserEntity(UserRequest userRequest);
+    @Mapping(target = "role", ignore = true)
+    UserEntity toUserCreateEntity(UserCreateRequest request);
 
-    
-
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "loans", ignore = true)
+    @Mapping(target = "reservations", ignore = true)
+    UserEntity toUserUpdateEntity(UserUpdateRequest request, @MappingTarget UserEntity user);
 
 
     @InheritInverseConfiguration

@@ -1,10 +1,10 @@
 package com.riwi.book_store.api.dto.request;
 
-import com.riwi.book_store.utils.enums.Role;
+
+
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,8 +15,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class UserRequest {
-
+public class UserCreateRequest {
     @Size(min = 1, max = 50, message = "The username has to be 1 or up to 50 characters long")
     @NotBlank(message = "The username is requaried")
     private String username;
@@ -34,7 +33,6 @@ public class UserRequest {
     @Size(min = 1, max = 100, message = "The full name has to be 1 or up to 100 characters long")
     private String fullName;
 
-    @NotNull(message = "The rol is requaried")
-    private Role rol;
-    
+   
+
 }

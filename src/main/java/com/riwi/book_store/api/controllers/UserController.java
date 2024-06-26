@@ -6,7 +6,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.riwi.book_store.api.dto.request.UserRequest;
+import com.riwi.book_store.api.dto.request.UserUpdateRequest;
 import com.riwi.book_store.api.dto.response.UserBasicResponse;
 import com.riwi.book_store.api.dto.response.UserResponse;
 import com.riwi.book_store.infraestructure.abstract_services.IUserService;
@@ -26,7 +26,7 @@ public class UserController {
     private final IUserService userService;
 
     @PostMapping
-    public ResponseEntity<UserBasicResponse> insert(@Validated @RequestBody UserRequest request) {
+    public ResponseEntity<UserBasicResponse> insert(@Validated @RequestBody UserUpdateRequest request) {
         return ResponseEntity.ok(this.userService.create(request));
     }
 

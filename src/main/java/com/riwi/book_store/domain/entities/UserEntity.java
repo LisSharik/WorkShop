@@ -45,7 +45,7 @@ public class UserEntity {
     private String fullName;
 
     @Enumerated(EnumType.STRING)
-    private Role rol;
+    private Role role;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = false)
     private List<Loan> loans;
