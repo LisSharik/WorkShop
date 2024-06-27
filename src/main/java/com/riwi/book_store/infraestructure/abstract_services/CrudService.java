@@ -14,7 +14,7 @@ public interface CrudService<RCQ, RUQ, RS, BRS, ID> {
 
     public RS get(ID id);
 
-    public BRS update(RUQ request, ID id);
+    public RS update(RUQ request, ID id);
 
     public void delete(ID id);
 

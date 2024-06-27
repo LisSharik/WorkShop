@@ -38,7 +38,7 @@ public class BookService implements IBookService {
     }
 
     @Override
-    public BookBasicResponse update(BookRequest request, Long id) {
+    public BookResponse update(BookRequest request, Long id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
