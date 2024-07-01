@@ -1,6 +1,4 @@
-package com.riwi.workshop.api.dto.response;
-
-import java.util.List;
+package com.riwi.workshop.api.dto.errors;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,11 +7,11 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 @EqualsAndHashCode(callSuper = true)
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-@Data
-public class BookResponse extends BookBasicResponse {
-    private List<LoanToBookResponse> loans;
-    private List<ReservationToBookResponse> reservations;
+public class ErrorResponse extends BaseErrorResponse {
+  private String message;
+    
 }

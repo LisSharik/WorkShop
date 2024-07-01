@@ -1,5 +1,6 @@
 package com.riwi.workshop.api.dto.response;
 
+
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -13,7 +14,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 @Data
-public class BookResponse extends BookBasicResponse {
-    private List<LoanToBookResponse> loans;
-    private List<ReservationToBookResponse> reservations;
+public class UserToReservationResponse extends UserBasicResponse {
+        private List<ReservationToUserResponse> reservations;
+
 }

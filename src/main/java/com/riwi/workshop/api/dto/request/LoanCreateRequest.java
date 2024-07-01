@@ -17,10 +17,10 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public class LoanCreateRequest extends LoanBasicRequest {
 
-    @NotNull(message = "The user id is requaried")
+    @NotNull(message = "The user id is required")
     private Long userId; 
 
-    @NotNull(message = "The book id is requaried")
+    @NotNull(message = "The book id is required")
     private Long bookId;
 
 

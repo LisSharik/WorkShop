@@ -38,7 +38,7 @@ public class Book {
     private Integer publicationYear;
 
     @Column(length = 50, nullable = false)
-    private String genere;
+    private String genre;
 
     @Column(length = 11, nullable = false)
     private String isbn;

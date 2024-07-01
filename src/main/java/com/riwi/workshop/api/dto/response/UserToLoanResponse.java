@@ -13,7 +13,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 @Data
-public class BookResponse extends BookBasicResponse {
-    private List<LoanToBookResponse> loans;
-    private List<ReservationToBookResponse> reservations;
+public class UserToLoanResponse extends UserBasicResponse {
+    private List<LoanToUserResponse> loans;
+
 }

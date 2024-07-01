@@ -6,7 +6,7 @@ import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 
 @Configuration
-@OpenAPIDefinition(info = @Info(title = "API for managing educational platform and its entities", version = "1.0", description = "Educational administration api documentation"))
+@OpenAPIDefinition(info = @Info(title = "API WorkShop", version = "1.0", description = "WorkShop API Documentation"))
 public class OpenApiConfig {
 
 }

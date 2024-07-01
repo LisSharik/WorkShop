@@ -13,7 +13,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 public class ReservationUpdateRequest extends ReservationCreateRequest {
-    @NotNull(message = "The status is requaried")
+    @NotNull(message = "The status is required")
     private boolean status;
 
 }

@@ -1,6 +1,5 @@
 package com.riwi.workshop.infraestructure.helpers.mappers;
 
-import java.util.List;
 
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -12,6 +11,8 @@ import com.riwi.workshop.api.dto.request.UserCreateRequest;
 import com.riwi.workshop.api.dto.request.UserUpdateRequest;
 import com.riwi.workshop.api.dto.response.UserBasicResponse;
 import com.riwi.workshop.api.dto.response.UserResponse;
+import com.riwi.workshop.api.dto.response.UserToLoanResponse;
+import com.riwi.workshop.api.dto.response.UserToReservationResponse;
 import com.riwi.workshop.domain.entities.UserEntity;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
@@ -29,12 +30,17 @@ public interface UserMapper {
     @Mapping(target = "reservations", ignore = true)
     UserEntity toUserUpdateEntity(UserUpdateRequest request, @MappingTarget UserEntity user);
 
-
     @InheritInverseConfiguration
     UserResponse toUserResponse(UserEntity userEntity);
 
     @InheritInverseConfiguration
     UserBasicResponse toUserBasicResponse(UserEntity userEntity);
 
-    List<UserBasicResponse> userListToResponseList(List<UserEntity> userEntities);
+    @InheritInverseConfiguration
+    UserToLoanResponse toUserToLoanResponse(UserEntity userEntity);
+    
+    @InheritInverseConfiguration
+    UserToReservationResponse tUserToReservationResponse(UserEntity userEntity);
+
+
 }

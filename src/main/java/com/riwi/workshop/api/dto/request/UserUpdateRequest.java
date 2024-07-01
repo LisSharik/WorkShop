@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 public class UserUpdateRequest extends UserCreateRequest {
-    @NotNull(message = "The rol is requaried")
+    @NotNull(message = "The rol is required")
     private Role role;
     
 }

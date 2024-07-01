@@ -19,9 +19,9 @@ public class ReservationCreateRequest {
     @FutureOrPresent(message = "The date must be current day or a later day")
     private LocalDate reservationDate;
 
-    @NotNull(message = "The user id is requaried")
+    @NotNull(message = "The user id is required")
     private Long userId; 
 
-    @NotNull(message = "The book id is requaried")
+    @NotNull(message = "The book id is required")
     private Long bookId;
 }
